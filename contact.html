@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website E~Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <script src="hamburger.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href=''>Wisnu</a></div>
+            <div class="toggle">
+              <i class="ham-btn fa-solid fa-bars"></i>
+            </div>
+            <div class="menu">
+                <ul>
+                  <li><a href= "index.html"class=>Home</a></li>
+                  <li><a href= "profil.html"class=>Our Profile</a></li>
+                  <li><a href= "about.html"class=>Portfolio</a></li>
+                  <li><a href= "contact.html"class=>Message Us</a></li>
+                  
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+  <div class="messageUs" id="messageUs">
+      <h1>Messages Me</h1>
+      <div class="content">
+          <div class="left">
+              <form name="user-form" onsubmit="return validationForm()">
+                  <div class="items">
+                      <label for="">Nama : </label>
+                      <input class="nama" type="text" name="full-name" placeholder="Nama"><br>
+                  </div>
+
+                  <div class="items">
+                      <label for="">Tanggal Lahir : </label>
+                      <input class="lahir" type="date" name="birth"><br>
+                  </div>
+
+                  <div class="items">
+                      <label for="">Jenis Kelamin : </label>
+                      <input class="rad" type="radio" id="male" name="gender" value="male">laki-laki 
+                      <input class="rad" type="radio" id="female" name="gender" value="female">perempuan <br>
+                  </div>
+
+                  <div class="items">
+                      <label for="">Pesan : </label> 
+                      <textarea name="messages" id="" cols="30" rows="10"placeholder="Pesan" name="messages"></textarea> <br>
+                  </div>
+
+                  <div class="items">
+                      <input class="btn-submit" type="submit" value="submit">
+                  </div>
+              </form>
+          </div>
+          <div class="right">
+              <div class="hasil">
+                  <p>Nama : <span id="user-full-name"></span></p>
+                  <p>Tanggal lahir : <span id="user-birth"></span></p>
+                  <p>Jenis Kelamin : <span id="user-gender"></span></p>
+                  <p>Pesan : <span id="user-messages"></span></p>
+              </div>
+          </div>
+      </div>
+      
+      <!-- JavaScript -->
+      <script>
+          function validationForm() {
+              const name = document.forms["user-form"]["full-name"].value;
+              const birth = document.forms["user-form"]["birth"].value;
+              const gender = document.forms["user-form"]["gender"].value;
+              const messages = document.forms["user-form"]["messages"].value;
+
+              if (name == "" || birth == "" || gender == "" || messages == "") {
+                  alert("Data tidak boleh ada yang kosong!");
+                  return false;
+              }
+
+              setSenderUI(name, birth, gender, messages);
+
+              return false;
+          }
+
+          function setSenderUI(name, birth, gender, messages) {
+              document.getElementById("user-full-name").innerHTML = name;
+              document.getElementById("user-birth").innerHTML = birth;
+              document.getElementById("user-gender").innerHTML = gender;
+              document.getElementById("user-messages").innerHTML = messages;
+          }
+      </script>
+  </div>
+</div>
+<footer>
+<p>Created By <Span>Wisnu Aryo Putro</Span></p>
+</footer>
+</body>
+</html>
